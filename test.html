@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Gallery Template</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        .gallery-item {
+            width: 30%;
+            margin-bottom: 20px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-item img {
+            width: 50%;
+            height: auto;
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.5s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-item .overlay-content {
+            color: #fff;
+            text-align: center;
+        }
+        .gallery-item .overlay-content h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .gallery-item .overlay-content p {
+            font-size: 18px;
+        }
+        @media only screen and (max-width: 768px) {
+            .gallery-item {
+                width: 48%;
+            }
+        }
+        @media only screen and (max-width: 480px) {
+            .gallery-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x500" alt="">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>Image Title</h3>
+                    <p>Image description</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x500" alt="">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>Image Title</h3>
+                    <p>Image description</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x500" alt="">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>Image Title</h3>
+                    <p>Image description</p>
+                </div>
+            </div>
+        </div>
+        <div class="gallery-item">
+            <img src="https://via.placeholder.com/500x500" alt="">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <h3>Image Title</h3>
+                    <p>Image description</p>
+                </div>
+            </div>
+        </div>
+     <div class="gallery-item">
+        <img src="https://via.placeholder.com/500x500" alt="">
+        <div class="overlay">
+        <div class="overlay-content">
+        <h3>Image Title</h3>
+        <p>Image description</p>
+        </div>
+        </div>
+        </div>
+        </div>
+
+        </body>
+        </html>

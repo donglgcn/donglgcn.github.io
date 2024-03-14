@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 样式表 */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 40px;
+}
+
+        .album {
+            position: relative;
+            display: block;
+            overflow: hidden;
+            border-radius: 0px;
+            cursor: pointer;
+        }
+        .album img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .album .caption {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100%;
+          height: 100%;
+          padding: 10px;
+          background-color: rgba(0, 0, 0, 0.6);
+          color: #fff;
+          font-size: 1.2em;
+          opacity: 0.7;
+          transition: opacity 0.3s ease-in-out;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          font-weight: thin;
+        }
+
+        .album:hover img {
+            transform: scale(1.05);
+        }
+        .album:hover .caption {
+            opacity: 1;
+        }
+
+      /* 使垂直分布 */
+/*      body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }  
+*/
+        mytext {
+        /*margin-top: 0;*/
+        font-family: 'Lato';
+        /*font-size: 32px;*/
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        }
+
+    </style>
+
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+</head>
+<body>
+    <br>
+    <br>
+    <br>
+
+    <mytext> Gallery </mytext>
+
+    <br>
+    <br>
+    <br>
+      <div class="container">
+          <!-- 相册分类集内容 -->
+          <a class="album" href="daily.html">
+              <img src="https://raw.githubusercontent.com/dacian98/images/main/285555844_170627852025429_8572303857116918707_n%20(1).jpeg">
+              <div class="caption">The Ongoing Moment</div> <!-- The Ongoing Moment -->
+          </a>
+
+          <a class="album" href="places.html">
+              <img src="https://raw.githubusercontent.com/dacian98/images/main/DSC_0506.jpg">
+              <div class="caption">Common Places</div>  <!-- Common Places -->
+          </a>
+
+          <a class="album" href="drifting.html">
+              <img src="https://raw.githubusercontent.com/dacian98/images/main/DSC_8359.JPG">
+              <div class="caption">Untitled</div> <!-- Drifting -->
+          </a>
+
+
+    </div>
+</body>
+</html>

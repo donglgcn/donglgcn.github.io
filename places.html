@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Film</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .heading {
+      font-size: 36px;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    
+    .gallery-item {
+      flex: 0 0 calc(33.33% - 10px);
+      margin-bottom: 20px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .gallery-item:hover {
+      transform: scale(1.01);
+    }
+    
+    .gallery-item img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 130px; /* User Defined: 增加项目之间的下边距 */
+      transition: opacity 0.3s ease-in-out;
+    }
+    
+    .gallery-item:hover img {
+      opacity: 0.9;
+    }
+
+    .modal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #FFFFFF;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+    }
+
+    mytext {
+    /*margin-top: 0;*/
+    font-family: 'Lato';
+    /*font-size: 32px;*/
+    font-size: 18px;
+    text-align: left;
+    }
+
+  </style>
+</head>
+<body>
+
+
+  <div class="container">
+    <!-- <h1 class="heading">Film</h1> -->
+<!--     <p>
+      <mytext> Daily collections </mytext>
+    </p> -->
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="gallery">
+
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/dacian98/images/main/img1.png" alt="Photo 1" onclick="openModal(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/dacian98/images/main/DSC_3449.jpg" onclick="openModal(this)">
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://raw.githubusercontent.com/dacian98/images/main/DAC_0970.JPG" onclick="openModal(this)">
+    </div>
+
+    </div>
+  </div>
+
+  <!-- 将 openModal 函数放在 script 标签中 -->
+  <script>
+function openModal(img) {
+  // 创建模态框元素
+  var modal = document.createElement('div');
+  modal.classList.add('modal');
+  
+  // 创建图像元素
+  var modalImg = document.createElement('img');
+  modalImg.src = img.src;
+
+  // 添加图像和标题元素到模态框中
+  modal.appendChild(modalImg);
+  
+  // 添加模态框到文档中
+  document.body.appendChild(modal);
+  
+  // 点击模态框时关闭模态框
+  modal.onclick = function() {
+    document.body.removeChild(modal);
+  }
+}
+  </script>
+
+
+</body>
+</html>
