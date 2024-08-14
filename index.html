@@ -5,16 +5,17 @@
   
   <meta name="author" content="Dongliang Guo">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+  <link rel="shortcut icon" href="images/icon.png">
+  <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" type="image/png" href="images/temp2.png">
+	<link rel="icon" type="image/png" href="images/icon.png">
 
   <!-- >>>>>>> Fonts >>>>>>> -->
   <link href="https://www.dafontfree.net/embed/aGlrb3Utb3V0bGluZS1yZWd1bGFyJmRhdGEvNjk3L2gvMTkyNDk4L0hpa291IE91dGxpbmUub3Rm" rel="stylesheet" type="text/css"/>
-
+	<link rel="stylesheet" href="./bootstrap.min.css">
+	
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Mukta:wght@300;400&family=Nanum+Gothic:wght@400;700;800&family=Nunito:ital,wght@0,300;0,400;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:ital,wght@0,300;0,400;1,300;1,400&family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Roboto:wght@300;400&family=Source+Sans+Pro&display=swap');
-
     /*@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap');*/
   </style>
   <!-- >>>>>>> Fonts >>>>>>> -->
@@ -23,13 +24,45 @@
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
+	<!-- Navigation Bar -->
+	<header>
+		<nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
+			<div class="container"> <button class="navbar-toggler collapsed ml-auto" type="button"
+					data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+					aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span
+						class="icon-bar bottom-bar"></span> </button>
+				<div class="collapse navbar-collapse text-right" id="navbarNav">
+					<ul class="navbar-nav ml-auto flex-nowrap">
+						<li class="nav-item active"> <a class="nav-link" href="https://donglgcn.github.io/">About
+								<span class="sr-only">(current)</span> </a> </li>
+						<li class="nav-item "> <a class="nav-link"
+								href="">Publications </a> </li>
+						<li class="nav-item "> <a class="nav-link"
+								href="">Projects </a> </li>
+						<li class="nav-item "> <a class="nav-link" href="">CV </a>
+						</li>
+						<li class="nav-item "> <a class="nav-link"
+								href="">Teaching &amp; Service </a> </li>
+					</ul>
+				</div>
+			</div>
+		</nav> 
+		<progress id="progress" value="" max="">
+			<div class="progress-container"> <span class="progress-bar"></span> </div>
+		</progress>
+	</header>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;padding-top: 0.625rem;"><tbody>
+    
+	<tr style="padding:0px">
       <td style="padding:0px;">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr style="padding:0px">
             <td style="padding:2.5%;width:65%;vertical-align:middle;"> <!-- custom, Set: top/middle  -->
-              <p style="text-align:center;" >
+				
+                
+              
+			  <p style="text-align:center;" >
               <!-- <p>   -->
             
                 <name>Dongliang Guo</name>
@@ -164,7 +197,7 @@
            
 
           <!-- --------------- PAPER --------------- -->
-          <tr onmouseout="cvpr12_stop()" onmouseover="cvpr12_start()">
+          <tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
               <td style="padding:var(--padding);width:25%;vertical-align:middle">
                 <img src="paper/FairAC.png" alt="blind-date" style="max-width:100%; height:auto;">
               </td>
@@ -185,7 +218,7 @@
             </tr>
 			
 			<!-- --------------- PAPER --------------- -->
-			<tr onmouseout="cvpr12_stop()" onmouseover="cvpr12_start()">
+			<tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
 			    <td style="padding:var(--padding);width:25%;vertical-align:middle">
 			      <img src="paper/ADAVAD.png" alt="blind-date" style="max-width:100%; height:auto;">
 			    </td>
@@ -204,7 +237,7 @@
 			</tr>
 			
 			<!-- --------------- PAPER --------------- -->
-			<tr onmouseout="cvpr12_stop()" onmouseover="cvpr12_start()">
+			<tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
 			    <td style="padding:var(--padding);width:25%;vertical-align:middle">
 			      <img src="paper/XVAD.png" alt="blind-date" style="max-width:100%; height:auto;">
 			    </td>
@@ -222,7 +255,7 @@
 			    </td>
 			</tr>
 
-          <tr onmouseout="cvpr12_stop()" onmouseover="cvpr12_start()">
+          <tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
               <td style="padding:var(--padding);width:25%;vertical-align:middle">
                 <img src="paper/csur.png" alt="blind-date" style="max-width:100%; height:auto;">
               </td>
@@ -324,6 +357,7 @@
   </tbody>
 </table>
  -->
+ <script src="./jquery.min.js"></script>
   <script>
     var imageList = [
      // {
@@ -367,6 +401,66 @@
       </td>
     </tr>
   </table>
+	<script type="text/javascript">
+	  function cvpr12_start(row) {
+		  row.style.backgroundColor = "#f0f0f0";
+		  // row.style.transform = "scale(1.05)";
+	  }
+	  
+	  // Function to reset the size of the image when not hovering
+	  function cvpr12_stop(row) {
+		  row.style.backgroundColor = ""; 
+		  // row.style.transform = "scale(1)";
+	  }
+	</script>
+  <script type="text/javascript">
+      function progressBarSetup() {
+          "max"in document.createElement("progress") ? (initializeProgressElement(),
+          $(document).on("scroll", function() {
+              progressBar.attr({
+                  value: getCurrentScrollPosition()
+              })
+          }),
+          $(window).on("resize", initializeProgressElement)) : (resizeProgressBar(),
+          $(document).on("scroll", resizeProgressBar),
+          $(window).on("resize", resizeProgressBar))
+      }
+      function getCurrentScrollPosition() {
+          return $(window).scrollTop()
+      }
+      function initializeProgressElement() {
+          let e = $("#navbar").outerHeight(!0);
+          $("body").css({
+              "padding-top": e
+          }),
+          $("progress-container").css({
+              "padding-top": e
+          }),
+          progressBar.css({
+              top: e
+          }),
+          progressBar.attr({
+              max: getDistanceToScroll(),
+              value: getCurrentScrollPosition()
+          })
+      }
+      function getDistanceToScroll() {
+          return $(document).height() - $(window).height()
+      }
+      function resizeProgressBar() {
+          progressBar.css({
+              width: getWidthPercentage() + "%"
+          })
+      }
+      function getWidthPercentage() {
+          return getCurrentScrollPosition() / getDistanceToScroll() * 100
+      }
+      const progressBar = $("#progress");
+      window.onload = function() {
+          setTimeout(progressBarSetup, 50)
+      }
+      ;
+  </script>
 </body>
 
 </html>
