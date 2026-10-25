@@ -1,0 +1,3 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 500" role="img" aria-label="The Clever Hans Mirage">
+  <rect width="900" height="500" fill="#f2f6f7"/><path d="M80 380 C220 235 315 370 430 220 S650 120 820 250" fill="none" stroke="#4d8195" stroke-width="7"/><circle cx="430" cy="220" r="16" fill="#24313a"/><text x="70" y="90" fill="#24313a" font-family="Arial, sans-serif" font-size="31" font-weight="700">THE CLEVER HANS MIRAGE</text><text x="70" y="135" fill="#687782" font-family="Arial, sans-serif" font-size="23">Spurious correlations in machine learning</text><text x="70" y="440" fill="#4d8195" font-family="Arial, sans-serif" font-size="24">TMLR · 2026</text>
+</svg>

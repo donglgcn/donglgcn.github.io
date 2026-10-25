@@ -1,512 +1,152 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-  <title>Dongliang Guo</title>
-  
-  <meta name="author" content="Dongliang Guo">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Dongliang Guo">
+  <title>Dongliang Guo</title>
   <link rel="shortcut icon" href="images/icon.png">
-  <link rel="stylesheet" href="./main.css">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-	<link rel="icon" type="image/png" href="images/icon.png">
-
-  <!-- >>>>>>> Fonts >>>>>>> -->
-  <link href="https://www.dafontfree.net/embed/aGlrb3Utb3V0bGluZS1yZWd1bGFyJmRhdGEvNjk3L2gvMTkyNDk4L0hpa291IE91dGxpbmUub3Rm" rel="stylesheet" type="text/css"/>
-	<link rel="stylesheet" href="./bootstrap.min.css">
-	
+  <link rel="stylesheet" href="stylesheet.css">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Mukta:wght@300;400&family=Nanum+Gothic:wght@400;700;800&family=Nunito:ital,wght@0,300;0,400;1,400&family=Open+Sans:ital,wght@0,300;0,400;1,300;1,400&family=Raleway:ital,wght@0,300;0,400;1,300;1,400&family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Roboto:wght@300;400&family=Source+Sans+Pro&display=swap');
-    /*@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@100&family=Julius+Sans+One&family=Lato:wght@300;400&family=Monda:wght@400;700&family=Nanum+Gothic:wght@400;700;800&display=swap');*/
+    :root { --ink:#202a30; --muted:#6b7880; --line:#dfe5e7; --accent:#466f7e; --soft:#f3f5f4; --paper:#fcfcfa; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--paper); font-family:'Avenir Next','Segoe UI',Helvetica,Arial,sans-serif; font-size:16px; line-height:1.7; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+    a { color:var(--accent); text-decoration:none; }
+    a:hover { color:#263f4c; }
+    .site { max-width:960px; margin:0 auto; padding:0 30px 72px; }
+    .topbar { position:sticky; top:0; z-index:10; display:flex; justify-content:space-between; align-items:center; min-height:62px; border-bottom:1px solid var(--line); background:rgba(252,252,250,.96); }
+    .topbar-name { color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:16px; font-weight:600; letter-spacing:-.01em; }
+    .nav { display:flex; gap:24px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+    .nav a { color:var(--muted); }
+    .nav a:hover { color:var(--ink); }
+    .hero { display:grid; grid-template-columns:minmax(0,1fr) 190px; gap:52px; align-items:center; padding:78px 0 64px; border-bottom:1px solid var(--line); }
+    h1 { margin:0 0 10px; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:44px; font-weight:500; letter-spacing:-.035em; line-height:1.08; }
+    .role { margin:0 0 24px; color:var(--accent); font-size:12px; font-weight:600; letter-spacing:.13em; text-transform:uppercase; }
+    .intro { max-width:650px; margin:0; font-size:17px; line-height:1.78; }
+    .contact { display:flex; flex-wrap:wrap; gap:8px 17px; margin-top:24px; font-size:14px; }
+    .photo { width:190px; height:232px; object-fit:cover; border-radius:2px; background:var(--soft); }
+    .section { padding:48px 0; border-bottom:1px solid var(--line); }
+    .section-title { display:flex; align-items:baseline; gap:17px; margin:0 0 24px; }
+    .section-title h2 { margin:0; font-size:12px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+    .section-title span { color:var(--muted); font-size:13px; }
+    .research-focus { display:flex; flex-wrap:wrap; gap:5px 18px; margin:0 0 18px; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:20px; font-weight:600; letter-spacing:-.01em; line-height:1.3; }
+    .research-focus span + span::before { content:'·'; margin-right:18px; color:var(--accent); font-family:'Avenir Next','Segoe UI',Helvetica,Arial,sans-serif; font-weight:400; }
+    .research-line { max-width:760px; margin:0; font-size:18px; line-height:1.75; }
+    .timeline { display:grid; gap:0; }
+    .timeline-item { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px; padding:14px 0; }
+    .timeline-item:first-child { padding-top:0; }
+    .timeline-item strong { display:block; color:var(--ink); font-size:16px; font-weight:650; }
+    .timeline-item p { margin:3px 0 0; color:var(--muted); }
+    .timeline-date { color:var(--muted); font-size:14px; text-align:right; white-space:nowrap; }
+    .publication-list { margin-top:4px; }
+    .publication { display:grid; grid-template-columns:180px minmax(0,1fr); gap:24px; padding:24px 0; }
+    .publication:first-child { padding-top:0; }
+    .publication img { display:block; width:180px; height:auto; max-height:140px; object-fit:contain; object-position:top center; border-radius:2px; background:var(--soft); }
+    .publication h3 { margin:0 0 6px; font-family:Georgia,'Times New Roman',serif; font-size:18px; font-weight:600; letter-spacing:-.012em; line-height:1.38; }
+    .authors { margin:0; color:var(--muted); font-size:14px; line-height:1.55; }
+    .venue { margin:5px 0 11px; color:var(--accent); font-size:14px; }
+    .paper-links { display:flex; gap:15px; font-size:12px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; }
+    .paper-links a { border-bottom:1px solid rgba(70,111,126,.35); }
+    .recent-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 34px; }
+    .recent-item { padding:13px 0; font-size:14px; line-height:1.5; }
+    .recent-item strong { display:block; color:var(--ink); }
+    .recent-item span { color:var(--muted); }
+    .service { max-width:780px; margin:0; color:var(--muted); font-size:15px; }
+    footer { padding-top:28px; color:var(--muted); font-size:13px; }
+    @media (max-width:700px) {
+      .site { padding:0 20px 52px; }
+      .topbar { align-items:flex-start; flex-direction:column; gap:3px; padding:13px 0; }
+      .nav { gap:15px; flex-wrap:wrap; }
+      .hero { grid-template-columns:1fr; gap:26px; padding:48px 0 42px; }
+      .photo { width:150px; height:180px; order:0; }
+      h1 { font-size:36px; }
+      .publication { grid-template-columns:1fr; gap:14px; }
+      .publication img { width:100%; height:auto; max-height:none; }
+      .timeline-item { grid-template-columns:1fr; gap:2px; }
+      .timeline-date { text-align:left; }
+      .recent-list { grid-template-columns:1fr; }
+    }
   </style>
-  <!-- >>>>>>> Fonts >>>>>>> -->
-
-
 </head>
-
 <body>
-	<!-- Navigation Bar -->
-	<header>
-		<nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation">
-			<div class="container"> <button class="navbar-toggler collapsed ml-auto" type="button"
-					data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-					aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span
-						class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span
-						class="icon-bar bottom-bar"></span> </button>
-				<div class="collapse navbar-collapse text-right" id="navbarNav">
-					<ul class="navbar-nav ml-auto flex-nowrap">
-						<li class="nav-item active"> <a class="nav-link" href="https://donglgcn.github.io/">About
-								<span class="sr-only">(current)</span> </a> </li>
-						<li class="nav-item "> <a class="nav-link"
-								href="">Publications </a> </li>
-						<li class="nav-item "> <a class="nav-link"
-								href="">Projects </a> </li>
-						<li class="nav-item "> <a class="nav-link" href="">CV </a>
-						</li>
-						<li class="nav-item "> <a class="nav-link"
-								href="">Teaching &amp; Service </a> </li>
-					</ul>
-				</div>
-			</div>
-		</nav> 
-		<progress id="progress" value="" max="">
-			<div class="progress-container"> <span class="progress-bar"></span> </div>
-		</progress>
-	</header>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;padding-top: 0.625rem;"><tbody>
-    
-	<tr style="padding:0px">
-      <td style="padding:0px;">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:65%;vertical-align:middle;"> <!-- custom, Set: top/middle  -->
-				
-                
-              
-			  <p style="text-align:center;" >
-              <!-- <p>   -->
-            
-                <name>Dongliang Guo</name>
-              </p>
+  <div class="site">
+    <header class="topbar">
+      <a class="topbar-name" href="#top">Dongliang Guo</a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#research">Research</a>
+        <a href="#experience">Experience</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#service">Service</a>
+      </nav>
+    </header>
 
-               <p>
-                I am currently a PhD student at the <a href="https://www.virginia.edu/">University of Virginia</a>, 
-				advised by <a href="http://sheng-li.org/">Dr. Sheng Li</a>. Prior to that, I received my bachelor's degree in Software Engineering from <a href="https://en.uestc.edu.cn/">University of Eletronic Science and Technology of China (UESTC)</a>. 
-              </p>
+    <main id="top">
+      <section class="hero">
+        <div>
+          <h1>Dongliang Guo</h1>
+          <p class="role">Applied Scientist at Amazon · AI Researcher</p>
+          <p class="intro">I work on trustworthy foundation AI, multimodal learning, language models, and agentic AI systems. I completed my Ph.D. in Data Science at the University of Virginia in 2026, advised by <a href="http://sheng-li.org/">Sheng Li</a>.</p>
+          <div class="contact">
+            <a href="mailto:donglgcn@gmail.com">donglgcn@gmail.com</a>
+            <a href="https://scholar.google.com/citations?hl=en&user=uztQCmMAAAAJ">Google Scholar</a>
+            <a href="https://github.com/donglgcn">GitHub</a>
+            <a href="https://www.linkedin.com/in/dongliang-guo-b46068264/">LinkedIn</a>
+          </div>
+        </div>
+        <img class="photo" src="images/PhD25 Dongliang Guo_resized.jpg" alt="Portrait of Dongliang Guo">
+      </section>
 
-              <!-- </p>
-               I also spent time at <a href="https://www.amazon.science/">Amazon Search Science & AI</a> (Palo Alto, CA) with focus on image generation.
-              </p> -->
+      <section class="section" id="research">
+        <div class="section-title"><h2>Research</h2></div>
+        <div class="research-focus"><span>Trustworthy AI</span><span>Multimodal Learning</span><span>Foundation Models</span></div>
+        <p class="research-line">Model editing, fairness and trustworthy representation learning, explainable anomaly detection, and reliable evaluation of foundation-model-based systems.</p>
+      </section>
 
-      <!--         <p>
-                I also collaborate with <a href="https://research.adobe.com/person/handong-zhao/">Dr. Handong Zhao</a> from <a href="https://research.adobe.com/">Adobe Research</a>.
-              </p> -->
-              
-  <!--             <p> I will join <a href="https://www.amazon.science/">Amazon Search Science and AI</a> team as an applied scientist (intern) this summer. </p> -->
+      <section class="section" id="experience">
+        <div class="section-title"><h2>Experience</h2></div>
+        <div class="timeline">
+          <div class="timeline-item"><div><strong>Amazon · Applied Scientist</strong><p>Agentic systems for Amazon Sellers and Specialists.</p></div><div class="timeline-date">Seattle, WA<br>Jun. 2026 – Present</div></div>
+          <div class="timeline-item"><div><strong>Amazon · Applied Scientist Intern</strong><p>Unified multimodal tokenization for customer, behavioral, and order-related signals.</p></div><div class="timeline-date">Seattle, WA<br>May – Aug. 2025</div></div>
+          <div class="timeline-item"><div><strong>Amazon · Applied Scientist Intern</strong><p>Multimodal language-model approaches for user request understanding and order decisions.</p></div><div class="timeline-date">Seattle, WA<br>May – Aug. 2024</div></div>
+          <div class="timeline-item"><div><strong>Amazon · Applied Scientist Intern</strong><p>Multimodal fraud detection with CLIP-style alignment of tabular and textual data.</p></div><div class="timeline-date">Seattle, WA<br>May – Aug. 2023</div></div>
+        </div>
+      </section>
 
+      <section class="section" id="publications">
+        <div class="section-title"><h2>Selected Publications</h2><span>† Equal contribution</span></div>
+        <div class="publication-list">
+          <article class="publication"><img src="paper/clever-hans.svg" alt="The Clever Hans Mirage paper thumbnail"><div><h3><a href="https://openreview.net/pdf/11a0d1756690bda32cb714d4a36ca8268622a58b.pdf">The Clever Hans Mirage: A Comprehensive Survey on Spurious Correlations in Machine Learning</a></h3><p class="authors">Wenqian Ye, Luyang Jiang, Eric Xie, Guangtao Zheng, Yunsheng Ma, Xu Cao, <strong>Dongliang Guo</strong>, et al.</p><p class="venue"><em>TMLR 2026</em></p><div class="paper-links"><a href="https://openreview.net/pdf/11a0d1756690bda32cb714d4a36ca8268622a58b.pdf">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/instructtime-real.png" alt="Figure from Instruction-based Time Series Editing"><div><h3><a href="https://arxiv.org/abs/2508.01504">Instruction-based Time Series Editing</a></h3><p class="authors">Jiaxing Qiu, <strong>Dongliang Guo</strong>, Brynne Sullivan, Teague R. Henry, Thomas Hartvigsen</p><p class="venue"><em>KDD 2026</em></p><div class="paper-links"><a href="https://arxiv.org/abs/2508.01504">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/dynamic-graphs.svg" alt="Revisiting Dynamic Graphs paper thumbnail"><div><h3><a href="https://openreview.net/pdf?id=ojVcsWXPpU">Revisiting Dynamic Graphs from the Perspective of Time Series</a></h3><p class="authors">Weili Shi, <strong>Dongliang Guo</strong>, Sheng Li</p><p class="venue"><em>TMLR 2026</em></p><div class="paper-links"><a href="https://openreview.net/pdf?id=ojVcsWXPpU">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/video-contrastive-real.png" alt="Figure from Video Contrastive Decoding"><div><h3><a href="https://papers.nips.cc/paper_files/paper/2025/hash/ea6d17af54f827336fc8fed27ca0319d-Abstract-Conference.html">Improve Temporal Reasoning in Multimodal Large Language Models via Video Contrastive Decoding</a></h3><p class="authors">Daiqing Qi†, <strong>Dongliang Guo</strong>†, Hanzhang Yuan, Handong Zhao, Mengxuan Hu, Lehan Yang, Sheng Li</p><p class="venue"><em>NeurIPS 2025</em></p><div class="paper-links"><a href="https://papers.nips.cc/paper_files/paper/2025/hash/ea6d17af54f827336fc8fed27ca0319d-Abstract-Conference.html">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/rag-fairness-real.png" alt="Figure from No Free Lunch"><div><h3><a href="https://aclanthology.org/2025.findings-emnlp.984/">No Free Lunch: Retrieval-Augmented Generation Undermines Fairness in LLMs, Even for Vigilant Users</a></h3><p class="authors">Mengxuan Hu†, Hongyi Wu†, Ronghang Zhu, Zihan Guan, <strong>Dongliang Guo</strong>, Daiqing Qi, Sheng Li</p><p class="venue"><em>Findings of EMNLP 2025</em></p><div class="paper-links"><a href="https://aclanthology.org/2025.findings-emnlp.984/">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/fewshot-alignment.svg" alt="Few-shot fine-grained image classification paper thumbnail"><div><h3><a href="https://dblp.org/rec/conf/icmi/GuoZRKLYL25">Few-shot Fine-grained Image Classification with Interpretable Prompt Learning through Distribution Alignment</a></h3><p class="authors"><strong>Dongliang Guo</strong>, Handong Zhao, Ryan A. Rossi, Sungchul Kim, Nedim Lipka, Tong Yu, Sheng Li</p><p class="venue"><em>ICMI 2025</em></p><div class="paper-links"><a href="https://dblp.org/rec/conf/icmi/GuoZRKLYL25">Paper</a></div></div></article>
+          <article class="publication"><img src="paper/BalanceEdit.jpg" alt="BalancEdit paper figure"><div><h3><a href="https://arxiv.org/abs/2505.01343">BalancEdit: Dynamically Balancing the Generality–Locality Trade-off in Multi-modal Model Editing</a></h3><p class="authors"><strong>Dongliang Guo</strong>, Mengxuan Hu, Zihan Guan, Thomas Hartvigsen, Sheng Li</p><p class="venue"><em>ICML 2025</em></p><div class="paper-links"><a href="https://arxiv.org/abs/2505.01343">Paper</a><a href="https://github.com/donglgcn/BalancEdit">Code</a></div></div></article>
+          <article class="publication"><img src="paper/CIKM.png" alt="Backdoor in Seconds paper figure"><div><h3><a href="https://arxiv.org/abs/2410.18267">Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing</a></h3><p class="authors"><strong>Dongliang Guo</strong>†, Mengxuan Hu†, Zihan Guan, Junfeng Guo, Thomas Hartvigsen, Sheng Li</p><p class="venue"><em>CIKM 2025</em></p><div class="paper-links"><a href="https://arxiv.org/abs/2410.18267">Paper</a><a href="https://github.com/donglgcn/Editing">Code</a></div></div></article>
+          <article class="publication"><img src="paper/ADAVAD.png" alt="Ada-VAD paper figure"><div><h3><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611978032.73">Ada-VAD: Domain Adaptable Video Anomaly Detection</a></h3><p class="authors"><strong>Dongliang Guo</strong>, Yun Fu, Sheng Li</p><p class="venue"><em>SDM 2024</em></p><div class="paper-links"><a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611978032.73">Paper</a><a href="https://github.com/donglgcn/ADA-VAD">Code</a></div></div></article>
+          <article class="publication"><img src="paper/FairAC.png" alt="FairAC paper figure"><div><h3><a href="https://arxiv.org/pdf/2302.12977v2.pdf">Fair Attribute Completion on Graph with Missing Attributes</a></h3><p class="authors"><strong>Dongliang Guo</strong>, Zhixuan Chu, Sheng Li</p><p class="venue"><em>ICLR 2023</em></p><div class="paper-links"><a href="https://arxiv.org/pdf/2302.12977v2.pdf">Paper</a><a href="https://github.com/donglgcn/FairAC">Code</a></div></div></article>
+          <article class="publication"><img src="paper/XVAD.png" alt="Explainable anomaly detection survey figure"><div><h3><a href="https://arxiv.org/pdf/2302.06670.pdf">Unveiling the Unseen: A Comprehensive Survey on Explainable Anomaly Detection in Images and Videos</a></h3><p class="authors">Yizhou Wang†, <strong>Dongliang Guo</strong>†, Sheng Li, Octavia Camps, Yun Fu</p><p class="venue"><em>Under review at IEEE TPAMI</em></p><div class="paper-links"><a href="https://arxiv.org/pdf/2302.06670.pdf">Paper</a><a href="https://github.com/wyzjack/Awesome-XAD">Code</a></div></div></article>
+          <article class="publication"><img src="paper/csur.png" alt="Trustworthy representation learning survey figure"><div><h3><a href="https://dl.acm.org/doi/abs/10.1145/3657301">A Survey of Trustworthy Representation Learning Across Domains</a></h3><p class="authors">Ronghang Zhu, <strong>Dongliang Guo</strong>, Daiqing Qi, Zhixuan Chu, Xiang Yu, Sheng Li</p><p class="venue"><em>ACM TKDD 2024</em></p><div class="paper-links"><a href="https://dl.acm.org/doi/abs/10.1145/3657301">Paper</a></div></div></article>
+        </div>
+      </section>
 
-              <p> Email: dongliang.guo at virginia.edu </p>
+      <section class="section" id="education">
+        <div class="section-title"><h2>Education</h2></div>
+        <div class="timeline">
+          <div class="timeline-item"><div><strong>University of Virginia</strong><p>Ph.D. in Data Science · Advisor: Sheng Li</p></div><div class="timeline-date">Aug. 2023 – Apr. 2026</div></div>
+          <div class="timeline-item"><div><strong>University of Georgia</strong><p>Ph.D. in Computer Science · Advisor: Sheng Li</p></div><div class="timeline-date">Aug. 2021 – Aug. 2023</div></div>
+          <div class="timeline-item"><div><strong>University of Electronic Science and Technology of China</strong><p>B.E. in Software Engineering</p></div><div class="timeline-date">Sep. 2016 – Jun. 2020</div></div>
+        </div>
+      </section>
 
-              <p align=left>
-                <!-- <a href="https://scholar.google.com/citations?hl=zh-CN&user=FIa-pykAAAAJ">Google Scholar</a> -->
-                <a href="https://scholar.google.com/citations?hl=en&user=uztQCmMAAAAJ">Google Scholar</a>  
-                &nbsp; / &nbsp; 
-                <a href="https://www.linkedin.com/in/dongliang-guo-b46068264/">LinkedIn</a> 
-                &nbsp; / &nbsp; 
-                <a href="https://github.com/donglgcn">Github</a>
-                &nbsp; / &nbsp; 
-                <!-- <a href="https://www.instagram.com/cassadore07/">Instagram</a> -->
-              </p>
-            </td>
-
-<!--             <td style="padding:2.5%;width:40%;max-width:90%;vertical-align:middle">
-              <a href="images/photo_bw_.png" class="hoverZoomLink">
-                <img align="top" alt="profile photo" src="images/photo_bw.png">
-              </a>             
-            </td> -->
-            <td style="padding:2.5%;width:40%;max-width:90%;vertical-align:middle;" >
-              <a href="images/PhD25 Dongliang Guo_resized.jpg" class="hoverZoomLink">
-                <img align="top" alt="profile photo" src="images/PhD25 Dongliang Guo_resized.jpg" style="float:right; display:block;">
-              </a>             
-            </td>
-
-
-        <!-- --------------- Section: Research --------------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-               <p class="research">
-                My research interests are including <strong>multi-modal learning, computer vision</strong> and <strong>Trustworthy learning</strong> (explainable AI, fairness).
-            <!--     <span style="float:left;text-align:left;">  I am interested in <strong>computer vision</strong>, <strong>multimodal learning</strong> (vision-language models), and <strong>machine learning</strong> (continual learning, federated learning). </span> -->
-
-                <style>
-                  @media screen and (min-width: 480px) {
-                    .research {
-                      margin-right: 20%;
-                    }
-                  }
-                </style>
-
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- --------------- Section: Education --------------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Education</heading>
-
-              <p>
-                Ph.D., 2021 - now, University of Virginia
-              </p>
-
-              <p>  
-                B.Eng., 2016 - 2020, University of Electronic Science and Technology of China
-              </p>
-
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- --------------- Section: Internship / Experience --------------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Working Experience</heading>
-            <p>
-				<div style="display:flex; flex-direction:column; gap:10px;">
-				<div style="display:flex; justify-content:space-between;">
-				  <div style="text-align:left;"> <strong>Amazon </strong> <br> Applied Scientist Intern 
-				    <!-- (mentored by <a href="https://www.linkedin.com/in/sontran">Dr. Son Tran</a>) -->
-				  </div>
-				  <div style="text-align:right;" class="internship">Seattle, WA <br>  May, 2025 - Aug, 2025  </div>
-				</div>
-			  <div style="display:flex; flex-direction:column; gap:10px;">
-			  <div style="display:flex; justify-content:space-between;">
-			    <div style="text-align:left;"> <strong>Amazon </strong> <br> Applied Scientist Intern 
-			      <!-- (mentored by <a href="https://www.linkedin.com/in/sontran">Dr. Son Tran</a>) -->
-			    </div>
-			    <div style="text-align:right;" class="internship">Seattle, WA <br>  May, 2024 - Aug, 2024  </div>
-			  </div>
-              <!-- Amazon -->
-            <div style="display:flex; flex-direction:column; gap:10px;">
-              <div style="display:flex; justify-content:space-between;">
-                <div style="text-align:left;"> <strong>Amazon, Multi-modal fraud detection</strong> <br> Applied Scientist Intern 
-                  <!-- (mentored by <a href="https://www.linkedin.com/in/sontran">Dr. Son Tran</a>) -->
-                </div>
-                <div style="text-align:right;" class="internship">Seattle, WA <br>  May, 2023 - Aug, 2023  </div>
-              </div>
-
-
-              
-            </div>
-            </p>
-                  
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- --------------- Section: Paper --------------- -->
-		<table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-		    <tr>
-		    <td style="padding-left:2.5%;width:100%;vertical-align:middle">
-		      <heading>Selected Publication</heading>
-			</td>
-			</tr>
-		</tbody></table>
-		
-        <table style="width:100%;padding-top:0px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <!-- <td style="padding:2.5%;">
-              <heading>Selected Publication</heading>
-          </td> -->
-           
-
-          <!-- --------------- PAPER --------------- -->
-          <tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-              <td style="padding:var(--padding);width:25%;vertical-align:middle">
-                <img src="paper/BalanceEdit.jpg" alt="blind-date" style="max-width:100%; height:auto;">
-              </td>
-              <td width="s%" valign="middle">
-                <a href="https://arxiv.org/abs/2505.01343">
-                  <papertitle>BalancEdit: Dynamically Balancing the Generality-Locality Trade-off in Multi-modal Model Editing</papertitle>
-                </a>
-                <br>
-                <strong>Dongliang Guo</strong>, Mengxuan Hu, Zihan Guan, Thomas Hartvigsen, Sheng Li</a>
-                <br>
-                <em>International Conference on Machine Learning (<strong>ICML</strong>)</em> 2025
-                <br>
-                <!-- <a href="https://github.com/donglgcn/FairAC">code</a> -->
-          				
-                <p style="margin-top:0px;">It aims to update the outdated knowledge in MLLMs via model editing. BalancEdit efficiently estimates the influence boundary of the knowledge, allowing the model to focus on the intended change without interfering with unrelated knowledge. </p>
-              </td>
-            </tr>
-			
-			<tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-				<td style="padding:var(--padding);width:25%;vertical-align:middle">
-				  <img src="paper/CIKM.png" alt="blind-date" style="max-width:100%; height:auto;">
-				</td>
-				<td width="s%" valign="middle">
-				  <a href="https://arxiv.org/abs/2410.18267">
-					<papertitle>Backdoor in Seconds: Unlocking Vulnerabilities in Large Pre-trained Models via Model Editing.</papertitle>
-				  </a>
-				  <br>
-				  <strong>Dongliang Guo*</strong>, Mengxuan Hu*, Zihan Guan, Junfeng Guo, Thomas Hartvigsen, and Sheng Li</a>
-				  <br>
-				  <em> The 34th ACM International Conference on Information and Knowledge Management (<strong>CIKM</strong>)</em> 2025
-				  <br>
-				  <!-- <a href="https://github.com/donglgcn/FairAC">code</a> -->
-							
-				  <p style="margin-top:0px;">It proposes EDT, an efficient, data-free, and training-free backdoor attack method. It reveals the vulnerabilities of existing large pre-trained models.</p>
-				</td>
-			  </tr>
-		  
-		  <!-- --------------- PAPER --------------- -->
-          <tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-              <td style="padding:var(--padding);width:25%;vertical-align:middle">
-                <img src="paper/FairAC.png" alt="blind-date" style="max-width:100%; height:auto;">
-              </td>
-              <td width="s%" valign="middle">
-                <a href="https://arxiv.org/pdf/2302.12977v2.pdf">
-                  <papertitle>Fair attribute completion on graph with missing attributes</papertitle>
-                </a>
-                <br>
-                <strong>Dongliang Guo</strong>, Zhixuan Chu, Sheng Li</a>
-                <br>
-                <em>International Conference on Learning Representations (<strong>ICLR</strong>)</em> 2023
-                <br>
-                <a href="https://github.com/donglgcn/FairAC">code</a>
-				
-                <p style="margin-top:0px;">It aims to generate fair node embeddings for some realistic networks with some nodes with missing attributes,
-				 by completing the node embeddings and jointly mitigating the feature and topological unfairness. </p>
-              </td>
-            </tr>
-			
-			<!-- --------------- PAPER --------------- -->
-			<tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-			    <td style="padding:var(--padding);width:25%;vertical-align:middle">
-			      <img src="paper/ADAVAD.png" alt="blind-date" style="max-width:100%; height:auto;">
-			    </td>
-			    <td width="s%" valign="middle">
-			      <a href="https://epubs.siam.org/doi/abs/10.1137/1.9781611978032.73">
-			        <papertitle>Ada-VAD: Domain Adaptable Video Anomaly Detection</papertitle>
-			      </a>
-			      <br>
-			      <strong>Dongliang Guo</strong>, Yun Fu, Sheng Li</a>
-			      <br>
-			      <em>SIAM International Conference on Data Mining (<strong>SDM</strong>)</em> 2024
-			      <br>
-			      <a href="https://github.com/donglgcn/ADA-VAD">code</a>
-			      <p style="margin-top:0px;">It adapts the proposed multi-modal VAD model from scene to scene by data augmentation and mutual information optimization. </p>
-			    </td>
-			</tr>
-			
-			<!-- --------------- PAPER --------------- -->
-			<tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-			    <td style="padding:var(--padding);width:25%;vertical-align:middle">
-			      <img src="paper/XVAD.png" alt="blind-date" style="max-width:100%; height:auto;">
-			    </td>
-			    <td width="s%" valign="middle">
-			      <a href="https://arxiv.org/pdf/2302.06670.pdf">
-			        <papertitle>Explainable Anomaly Detection in Images and Videos: A Survey</papertitle>
-			      </a>
-			      <br>
-			      Yizhou Wang*, <strong>Dongliang Guo*</strong>, Sheng Li, Octavia Camps, Yun Fu</a>
-			      <!-- <br> -->
-			      <!-- <em>SIAM International Conference on Data Mining (<strong>SDM</strong>)</em> 2024 -->
-			      <br>
-			      <a href="https://github.com/wyzjack/Awesome-XAD">code</a>
-			      <p style="margin-top:0px;">We collect and conclude the existing explainable anomaly detection methods, introduce useful datasets and metrics, and propose some promising future directions. </p>
-			    </td>
-			</tr>
-
-          <tr onmouseout="cvpr12_stop(this)" onmouseover="cvpr12_start(this)">
-              <td style="padding:var(--padding);width:25%;vertical-align:middle">
-                <img src="paper/csur.png" alt="blind-date" style="max-width:100%; height:auto;">
-              </td>
-
-              <td width="75%" valign="middle">
-                <a href="https://dl.acm.org/doi/abs/10.1145/3657301">
-                  <papertitle> A Survey of Trustworthy Representation Learning Across Domains </papertitle> 
-                </a>
-                <br>
-                Ronghang Zhu, <strong>Dongliang Guo</strong>, Daiqing Qi, Zhixuan Chu, Xiang Yu, Sheng Li
-                <br>
-                <em>ACM Transactions on Knowledge Discovery from Data (<strong>TKDD</strong>) </em> 2024
-                <p></p>
-               
-              </td>
-            </tr>           
-
-
-        </tbody></table>
-
-        <!-- --------------- Section: Collaborators --------------- -->
-       <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Collaboration</heading>
-              <p>
-             <a href="https://research.adobe.com/person/handong-zhao/">Handong Zhao</a>, Ph.D., Senior Research Scientist @<a href="https://research.adobe.com/">Adobe Research</a>, San Jose, CA
-              </p>
-
-            </td>
-          </tr>
-        </tbody></table> -->
-
-        <!-- --------------- Section: Service --------------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Services</heading>
-              <p>
-                <strong>Program Committee Member / Reviewer</strong>: ICLR 2024, NeurIPS 2023-24, ICML 2024, CVPR 2024, IEEE CIM, IEEE Big Data, IEEE TKDD, IEEE TNNLS, IEEE TPAMI.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- --------------- Section: Teaching --------------- -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>Teaching</heading>
-              <p>
-                CS 5012: Foundations of Computer Science (Spring 2023)
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-
-        <!-- --------------- Section: About Me --------------- -->
-        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <heading>About Me</heading>
-              <p>
-                My name is Daiqing Qi (祁岱青). I post some of my photographs on my <a href="https://www.instagram.com/cassadore07/">Instagram</a> and <a href="home.html">my website</a>.
-              </p>
-              <p>
-                I play the Auto Battler game (a subgenre of strategy video games)  and was among top 100 (ranked <red>#52</red>) best players  nationwide (2020).
-              </p>
-            </td>
-          </tr>
-        </tbody></table>  -->      
-
-        <!-- --------------- Section: Gallery --------------- -->
-
-
-  <style>
-      figcaption {
-      /*font-size: 0.2em;  Change to the desired font size */
-      font-size: 12px;
-      color: grey; /* Change to the desired font color */
-      text-align: middle; /* Align the caption with the left side of the image */
-    }
-  </style>
-
-
-<!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-  <tbody>
-    <tr>
-      <td style="padding:2.5%;width:100%;vertical-align:middle">
-        <heading>Gallery</heading>
-          <center>
-          <figure>
-            <img id="profile-photo" align="top" alt="" src="https://raw.githubusercontent.com/dacian98/images/main/20230316025254.png" width="55%" class="responsive-img">
-            <figcaption id="caption"></figcaption>
-          </figure>      
-        </center>
-      </td>
-    </tr>
-  </tbody>
-</table>
- -->
- <script src="./jquery.min.js"></script>
-  <script>
-    var imageList = [
-     // {
-     //    src: "https://raw.githubusercontent.com/dacian98/images/main/20230320132133.png",
-     //    caption: "Long shot of night road arrowing forlorn into immensities and flat of impossible-to-believe America in New Mexico under the prisoner's moon. (U.S. 285, New Mexico, by Robert Frank, from The Americans.)"
-     //  },
-     {
-        src: "https://raw.githubusercontent.com/dacian98/images/main/9821e82a-3ecf-4895-8b69-74ef71d6e334.jpeg",
-        caption: "Drive-in movie, Detroit 1955, by Robert Frank, from The Americans."
-      },         
-    {
-        src: "https://raw.githubusercontent.com/dacian98/images/main/9781597115117.jpeg",
-        caption: "Robert Adams, American Silence"
-      },
-      {
-        src: "https://raw.githubusercontent.com/dacian98/images/main/20230403162050.png",
-        caption: "South Pole–Aitken basin, an immense impact crater on the far side of the Moon"
-      },
-      // {
-      //   src: "https://raw.githubusercontent.com/dacian98/images/main/20230316013623.png",
-      //   caption: "Saul Leiter, Deborah at Tante Esther’s, c. 1947"
-      // },
-    ];
-
-    function updateProfilePhoto() {
-      var randomIndex = Math.floor(Math.random() * imageList.length);
-      var imageSrc = imageList[randomIndex].src;
-      var imageCaption = imageList[randomIndex].caption;
-
-      var profilePhoto = document.getElementById("profile-photo");
-      profilePhoto.src = imageSrc;
-
-      var caption = document.getElementById("caption");
-      caption.textContent = imageCaption;
-    }
-
-    updateProfilePhoto();
-  </script>
-
-
-      </td>
-    </tr>
-  </table>
-	<script type="text/javascript">
-	  function cvpr12_start(row) {
-		  row.style.backgroundColor = "#f0f0f0";
-		  // row.style.transform = "scale(1.05)";
-	  }
-	  
-	  // Function to reset the size of the image when not hovering
-	  function cvpr12_stop(row) {
-		  row.style.backgroundColor = ""; 
-		  // row.style.transform = "scale(1)";
-	  }
-	</script>
-  <script type="text/javascript">
-      function progressBarSetup() {
-          "max"in document.createElement("progress") ? (initializeProgressElement(),
-          $(document).on("scroll", function() {
-              progressBar.attr({
-                  value: getCurrentScrollPosition()
-              })
-          }),
-          $(window).on("resize", initializeProgressElement)) : (resizeProgressBar(),
-          $(document).on("scroll", resizeProgressBar),
-          $(window).on("resize", resizeProgressBar))
-      }
-      function getCurrentScrollPosition() {
-          return $(window).scrollTop()
-      }
-      function initializeProgressElement() {
-          let e = $("#navbar").outerHeight(!0);
-          $("body").css({
-              "padding-top": e
-          }),
-          $("progress-container").css({
-              "padding-top": e
-          }),
-          progressBar.css({
-              top: e
-          }),
-          progressBar.attr({
-              max: getDistanceToScroll(),
-              value: getCurrentScrollPosition()
-          })
-      }
-      function getDistanceToScroll() {
-          return $(document).height() - $(window).height()
-      }
-      function resizeProgressBar() {
-          progressBar.css({
-              width: getWidthPercentage() + "%"
-          })
-      }
-      function getWidthPercentage() {
-          return getCurrentScrollPosition() / getDistanceToScroll() * 100
-      }
-      const progressBar = $("#progress");
-      window.onload = function() {
-          setTimeout(progressBarSetup, 50)
-      }
-      ;
-  </script>
+      <section class="section" id="service">
+        <div class="section-title"><h2>Service</h2></div>
+        <p class="service">Program Chair, NeurIPS 2024 Workshop on Large Foundation Models for Educational Assessment. 88 completed reviews across 24 venues, including NeurIPS, ICLR, ICML, AAAI, COLM, SDM, TMLR, and IEEE TNNLS.</p>
+      </section>
+    </main>
+    <footer>© Dongliang Guo</footer>
+  </div>
 </body>
-
 </html>
